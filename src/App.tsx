@@ -9,7 +9,7 @@ function App() {
         <div>
             <AppTitle/>
             <Rating value = {3}/>
-            <Accordion title={"Menu"}/>
+            <Accordion titleValue={"Menu"}/>
             <Rating value = {4}/>
         </div>
     );

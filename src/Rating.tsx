@@ -1,6 +1,10 @@
 import React from "react";
 
-function Star(props: any) {
+type starProps = {
+    selected: boolean;
+}
+
+function Star(props: starProps) {
     console.log("star rendered")
     if(props.selected) {
         return <div><b>Star</b></div>
@@ -9,7 +13,11 @@ function Star(props: any) {
     }
 }
 
-export function Rating(props: any) {
+type raringProps = {
+    value: number;
+}
+
+export function Rating(props: raringProps) {
     console.log("rating rendered");
     let stars = [];
     let no = 0;
