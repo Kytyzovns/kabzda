@@ -3,10 +3,12 @@ import React from 'react';
 import './App.css';
 import {Accordion} from "./Accordion";
 import {Rating} from "./Rating";
+import {GlobalStyles} from "./Styles";
 
 function App() {
     return (
         <div>
+            <GlobalStyles/>
             <AppTitle/>
             <Rating value = {3}/>
             <Accordion titleValue={"Menu"}/>

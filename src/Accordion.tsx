@@ -1,4 +1,5 @@
 import React from "react";
+import {StyledUl} from "./Styles";
 
 type accordionPropsType = {
     titleValue: string;
@@ -24,11 +25,11 @@ function AccordionTitle(props: accordionTitleProps) {
 
 function AccordionBody() {
     console.log("accordionBody rendered");
-    return <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-    </ul>
+    return <StyledUl>
+        <li>first</li>
+        <li>second</li>
+        <li>third</li>
+    </StyledUl>
 }
 
 export default Accordion;
