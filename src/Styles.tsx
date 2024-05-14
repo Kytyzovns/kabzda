@@ -1,40 +1,64 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import {createGlobalStyle} from "styled-components";
 
-export const StyledUl = styled.ul`
+
+type StyledUlPropsType = {
+    color1?: string;
+}
+
+type StyledLiPropsType = {
+    clean?: boolean;
+}
+export const StyledLi = styled.li<StyledLiPropsType>`
+
+    ${props => props.clean && css<StyledLiPropsType>`
+        background-color: #e8880a !important;
+        `}
+    
+    background-color: #e8880a;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 3px;
+`
+
+export const StyledUl = styled.ul<StyledUlPropsType>`
+    border-radius: 5px;
+    width: 25%;
     list-style: none;
     color: #090b0b;
+    background-color: ${props => props.color1};
 
-    li {
-        background-color: #e8880a;
-        width: 100px;
-        height: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        font-size: 1.5rem;
-        font-weight: bold;
-        border-radius: 3px;
-    }
-
-    li + li {
+    ${StyledLi} + ${StyledLi} {
         margin-top: 5px;
     }
-`
-// export const StyledH3 = styled(StyledUl)`
-//     // я хочу чтобы это унаследовало стиль <li> из StyledUl
-// `
-export const GlobalStyles = createGlobalStyle`
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-body {
-    background-color: black;
-    color: aliceblue;
-}
+    ${StyledLi} {
+        background-color: aqua;
+        &:hover {
+            background-color: blueviolet !important;
+        }
+    }
+`
+export const StyledH3 = styled(StyledLi)`
+ 
+    margin-bottom: 10px;
+`
+export const GlobalStyles = createGlobalStyle`
+    *, *::before, *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: black;
+        color: aliceblue;
+    }
 `
 
