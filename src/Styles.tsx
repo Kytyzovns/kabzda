@@ -1,5 +1,6 @@
 import styled, {css} from "styled-components";
 import {createGlobalStyle} from "styled-components";
+import {myTheme} from "./myTheme.Styled";
 
 
 type StyledUlPropsType = {
@@ -41,7 +42,7 @@ export const StyledUl = styled.ul<StyledUlPropsType>`
     ${StyledLi} {
         background-color: aqua;
         &:hover {
-            background-color: blueviolet !important;
+            background-color: ${myTheme.colors.first} !important;
         }
     }
 `
