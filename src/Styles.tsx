@@ -39,6 +39,19 @@ export const StyledUl = styled.ul<StyledUlPropsType>`
         margin-top: 5px;
     }
 
+    li {
+        background-color: #e8880a;
+        width: 100%;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        border-radius: 3px;
+    }
+    
     ${StyledLi} {
         background-color: aqua;
         &:hover {
